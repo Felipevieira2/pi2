@@ -75,14 +75,26 @@ if (isset($_GET['catEditar'])){
 }
 if (isset($_GET['catExcluir'])){
 	if (is_numeric($_GET['catExcluir'])){
-		if(odbc_exec($db, "DELETE categoria 
+		$consultaCategoria = "SELECT idCategoria 
+								FROM produto 
+								WHERE idCategoria = '{$_GET['catExcluir']}'";
+
+		$resultadoCategoria = (odbc_exec($db, $consultaCategoria));
+		$numeroLinhas = odbc_num_rows($resultadoCategoria);
+		echo $numeroLinhas;
+		if ($numeroLinhas == 0){
+			if(odbc_exec($db, "DELETE categoria 
 			WHERE idCategoria = 
 			{$_GET['catExcluir']}")){
 			$msg = "Categoria excluída com sucesso!";
 
+			}else{
+				$erro ="Erro ao excluir categoria";
+			}
 		}else{
-			$erro ="Erro ao excluir categoria";
+			$erro = "Existem produtos cadastrados na categoria!";
 		}
+		
 	}else{
 		$erro = "Erro, operação inválida!";
 	}
