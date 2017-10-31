@@ -1,0 +1,185 @@
+			*{margin: 0; padding: 0;}
+
+			body{
+				border: none;
+				padding: none;
+			}
+
+			html {
+                height: 100%;
+                width: 100%;
+            }
+            #colorstrip1 {
+				width: 100%;
+				height: 50px;
+				border-style: solid;
+				border-color: #455A64;
+				background-color: #455A64;
+
+            }
+	    	#colorstrip2 {
+                width: 100%;
+				height: 90px;
+                border-style: solid;
+   				border-style: solid;
+                border-color: #00BCD4;
+                background-color: #00BCD4;
+
+            }
+            #feature {
+                width: 1000px;
+                margin: 95px auto 0 auto;
+                overflow: auto;
+            }
+            #content {
+				font-family: 'Roboto', sans-serif;
+				font-weight: 900;
+				font-size: 26px;
+				color: #00BCD4;
+				width: 600px;
+            }
+            #formLogin{
+            	background-color:#525252;
+            	margin: 0 auto;
+            	width: 300px;
+            	height: 400px;
+            	bottom: 20%;
+              	left: 35%;
+				position: absolute;
+				text-align: center;
+            	border: solid black 1px;
+            }
+            #logoFormHippo{
+            	margin-top:2%;
+            	width: 160px;
+
+            }
+            #btnLogin{
+
+            	color:#525252;
+				border: solid black 2px;
+				width:150px;
+				font-size: 30px;
+            }	
+
+            
+           
+            #sessao{
+            	width: 10%; 
+            	border:white;
+            	color: black;
+            	position: absolute;
+            	right: 4%;
+            }
+			#menuAdmin{
+            	position: relative;
+				right: -20%;
+				
+				
+			}
+            form{
+            	text-align: center;
+            }
+            button{
+			    border-color:#BD0100;
+				width:150px;
+				height: 40px;
+            	background: #525252;
+            	font-family: 'Roboto', sans-serif;
+                color: white;
+				position: relative;
+            }
+			#divBusca{
+				  background-color:#E0EEEE;
+				  border:solid 2px #5F9EA0;
+				  border-radius:10px;
+				  width:70%;
+				  height:32px;
+			
+				  margin: 3px auto auto auto;
+				
+				  
+				 
+			}
+
+			#txtBusca{
+				  float:left;
+				  background-color:transparent;
+				  padding-left:5%; 
+				  font-size:18px;
+				  border:none;
+				  height:32px;
+				  width:70%;
+				 
+			}
+
+			#btnBusca{
+				  border:none;
+				  float:right;
+				  height:32px;
+				  border-radius:0 7px 7px 0;
+				  width:10%;
+				  font-weight:bold;
+				  background:#5F9EA0;
+				  
+			}
+
+			#divBusca img{
+				  float:left;
+				  width: 3%;
+				  height:30px;
+			}
+                  
+            #content h1 {                
+                font-family: 'Roboto', sans-serif;
+                color: #BD0100;                
+                font-weight: 300;                
+                font-size: 70px;                
+                line-height: 48pt;                
+                width: 600px;           
+                padding-bottom: 15px; 
+                text-shadow: 2px 2px #525252;
+            }
+            #content p{
+            	margin-bottom: 10px;
+            	font-size: 18px;
+            	margin-top: 0px;
+            	font-size: 18px;
+            	margin-top: 0px;
+            }
+            aside {
+                float:right;
+            }
+			nav a {
+				font-family: 'Roboto', sans-serif;
+				font-weight: 300;
+				font-size: 20px;
+				color: #ffffff;
+				text-decoration: blink;
+				padding: 10px 10px 10px 10px;
+                margin-top: 20px;
+				background-color: #BD0100;
+                display: block;
+                
+				-webkit-border-top-left-radius:12px;
+				-moz-border-radius-topleft:12px;
+				border-top-left-radius:12px;
+				-webkit-border-top-right-radius:12px;
+				-moz-border-radius-topright:12px;
+				border-top-right-radius:12px;
+				-webkit-border-bottom-right-radius:12px;
+				-moz-border-radius-bottomright:12px;
+				border-bottom-right-radius:12px;
+				-webkit-border-bottom-left-radius:12px;
+				-moz-border-radius-bottomleft:12px;
+				border-bottom-left-radius:12px;
+			}
+			#tableDados{
+				width: 800px;
+				border-color:#455A64;
+				color: black;
+				margin-left: 20%;
+			}
+			table {
+				background-color: #00BCD4;
+			}
