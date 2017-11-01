@@ -13,9 +13,9 @@
 			
         </div>
         <div id="colorstrip2"><div id="menuAdmin">
-				<a href="index.php?menu=users"> <button id="btnUsuario"> Usuario</button></a> 
-				<a href="index.php?menu=categories"> <button id="btCategoria">Categoria</button></a>
-				<a href="index.php?menu=products"><button  id="btnProduto"> Produto</button></a>
+				<a href="..\users\index.php?menu=users"> <button id="btnUsuario"> Usuario</button></a> 
+				<a href="..\cat\index.php?menu=categories"> <button id="btCategoria">Categoria</button></a>
+				<a href="..\products\index.php?menu=products"><button  id="btnProduto"> Produto</button></a>
 				<a href='#'><button  id="btnConta">   Minha conta</button></a>
 				<a href='..\logout.php'><button id="btnSair">Sair</button></a>
 			</div>
@@ -25,10 +25,47 @@
                   <button id="btnBusca">Buscar</button>
             </div>
         </div>
-        <div id="feature">
 
-            <div id="content">
-		              
+            <div id="content" cellpadding="1000px" cellspacing="4"> 
+                
+                <div id="tableDados">
+                 <TABLE border='1'>
+                        <TR>
+                            <td>Produto</td> 
+                            <td>Imagem</td>
+                            <td>Descrição</td>
+                            <td>Preço</td>
+                            <td>Ativo</td>
+                           
+                        </TR>
+                <?php 
+
+                foreach ($produto as $idProduto => $dadosProduto) {
+                    $img = base64_encode($dadosProduto['imagem']);
+                    echo "<tr>
+                          <td>${dadosProduto["nomeProduto"]}</td>
+                          "
+
+
+
+
+
+                          .
+
+                          '<td>
+                          <img src="data:image/jpeg;base64,'.$img.'" style="width: 150px;"/>
+                          </td>'.
+                         "
+                          <td id='teste'>${dadosProduto["descProduto"]}</td>
+                        
+                          </tr>
+                          ";
+                }
+             
+
+                ?>
+                </table>
+                </div>
             </div>
             <aside>
                 <nav>

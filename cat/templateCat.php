@@ -25,7 +25,7 @@
                   <button id="btnBusca">Buscar</button>
             </div>
         </div>
-        <div id="feature">
+  
             <div id="content">
                 <div id="tableDados">
                 <a href="?menu=categoria&catCadastrar=1"> Adicionar categoria</a>

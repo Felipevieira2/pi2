@@ -81,6 +81,7 @@ if (isset($_GET['catExcluir'])){
 
 		$resultadoCategoria = (odbc_exec($db, $consultaCategoria));
 		$numeroLinhas = odbc_num_rows($resultadoCategoria);
+		echo $numeroLinhas;
 		if ($numeroLinhas == 0){
 			if(odbc_exec($db, "DELETE categoria 
 			WHERE idCategoria = 

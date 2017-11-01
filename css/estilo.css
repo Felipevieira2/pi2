@@ -26,16 +26,12 @@
                 background-color: #00BCD4;
 
             }
-            #feature {
-                width: 1000px;
-                margin: 95px auto 0 auto;
-                overflow: auto;
-            }
+
             #content {
 				font-family: 'Roboto', sans-serif;
 				font-weight: 900;
-				font-size: 26px;
-				color: #00BCD4;
+				font-size: 20px;
+				color: #000000;
 				width: 600px;
             }
             #formLogin{
@@ -175,11 +171,10 @@
 				border-bottom-left-radius:12px;
 			}
 			#tableDados{
-				width: 800px;
+				width: 5500px;
 				border-color:#455A64;
-				color: black;
-				margin-left: 20%;
+
 			}
-			table {
-				background-color: #00BCD4;
+			#teste {
+				width:1000px;
 			}
