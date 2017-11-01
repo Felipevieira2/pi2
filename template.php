@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hippo Mercado</title>
+        <title>Gandalf</title>
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css\estilo.css">
 
@@ -52,7 +52,7 @@
             <aside>
                 <nav>   
                     <center>
-                        <img id="logoHippo" src="images\LogoHippo.jpg" />
+                        <img id="logoGandalf" src="images\logoGandalf.jpg" />
 
                     </center>
                         

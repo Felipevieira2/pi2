@@ -2,7 +2,7 @@
 <html>
     <head>
 
-        <title>Hippo Mercado</title>
+        <title>Gandalf</title>
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="..\css\estilo.css"></head>
         
@@ -48,7 +48,7 @@
             <aside>
                 <nav>
                     <!--<a href="gandalf_briefing.html">A Empresa</a>-->
-                    <img src="images/LogoHippo.jpg" style="width: 315px;"/>
+                    <img src="images/LogoGandalf.jpg" style="width: 315px;"/>
                     
                 </nav>
             </aside>
