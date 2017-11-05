@@ -32,7 +32,7 @@
                                     
                                       
                                       <center>
-                                          <div id="logoFormHippo"> 
+                                          <div id="logoForm"> 
                                             <center>
                                                <img width ="100px" src="images\logoForm.png"/> 
                                          </div>
@@ -52,7 +52,7 @@
             <aside>
                 <nav>   
                     <center>
-                        <img id="logoGandalf" src="images\logoGandalf.jpg" />
+                        <img id="Gandalflogo" src="images\Gandalflogo.jpg" />
 
                     </center>
                         

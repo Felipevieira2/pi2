@@ -1,9 +1,9 @@
 ﻿<?php
 
-$dbHost= "serverf.database.windows.net";   #Nome do host
-$dbName= "db_felipe";   #Nome do banco de dados
-$dbUser= "felipe"; #Nome do usuário
-$dbPassword= "######";   #Senha do usuário
+$dbHost= "pi2-alexandre.database.windows.net";   #Nome do host
+$dbName= "Db_Alexandre";   #Nome do banco de dados
+$dbUser= "alexandrefidalgo"; #Nome do usuário
+$dbPassword= "M@rcinha123";   #Senha do usuário
 $dsn = "Driver={SQL Server};
 		Server=$dbHost;
 		Port=1433;

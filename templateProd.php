@@ -20,7 +20,7 @@
 				<a href='..\logout.php'><button id="btnSair">Sair</button></a>
 			</div>
             <div id="divBusca">
-                  <img src="images/procura.png" alt="Buscar..."/>
+                  <img src="images/Procura.png" alt="Buscar..."/>
                   <input type="text" id="txtBusca" placeholder="Buscar..."/>
                   <button id="btnBusca">Buscar</button>
             </div>
@@ -53,7 +53,7 @@
                           .
 
                           '<td>
-                          <img src="data:image/jpeg;base64,'.$img.'" style="width: 150px;"/>
+                          <img src="data:image/jpeg;base64,'.$img.'" style="width: 100px;"/>
                           </td>'.
                          "
                           <td id='teste'>${dadosProduto["descProduto"]}</td>
