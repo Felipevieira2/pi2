@@ -33,7 +33,6 @@
                         <TR>
                             <td>Produto</td> 
                             <td>Imagem</td>
-                            <td>Descrição</td>
                             <td>Preço</td>
                             <td>Ativo</td>
                            
@@ -42,24 +41,25 @@
 
                 foreach ($produto as $idProduto => $dadosProduto) {
                     $img = base64_encode($dadosProduto['imagem']);
+                                             // <td style='width:400px;' id='teste'>${dadosProduto["descProduto"]}</td>
                     echo "<tr>
                           <td>${dadosProduto["nomeProduto"]}</td>
-                          "
-
-
-
-
-
+                          "                         
                           .
 
                           '<td>
                           <img src="data:image/jpeg;base64,'.$img.'" style="width: 150px;"/>
                           </td>'.
-                         "
-                          <td id='teste'>${dadosProduto["descProduto"]}</td>
-                        
-                          </tr>
-                          ";
+                         " <td>${dadosProduto["precProduto"]}</td>";
+
+                          if ($dadosProduto["ativoProduto"] == 1){
+                            echo "<td>Ativo</td> </td>"; 
+                          }else
+                          {
+                            echo "<td>Inativo</td></td>";
+                          }
+
+                                              
                 }
              
 

@@ -21,7 +21,7 @@ if (isset($_POST['login']) && (isset($_POST['senha']))){
 	    
 	    $_SESSION['idUsuario'] = $usuario['idUsuario'];
 	    $menu=='users';
-	    header('Location: /menu/');
+	    header('Location: /menu/index.php');
 	}
 
 }

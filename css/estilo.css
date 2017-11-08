@@ -171,9 +171,9 @@
 				border-bottom-left-radius:12px;
 			}
 			#tableDados{
-				width: 5500px;
+				width: 1000px;
 				border-color:#455A64;
-
+				text-align: center;
 			}
 			#teste {
 				width:1000px;

@@ -9,10 +9,11 @@ while ($totalProdutos = odbc_fetch_array($consultaProdutos)) {
 	$produto[$totalProdutos['idProduto']] = $totalProdutos;
 }
 //echo '<pre>';
-//print_r($produto);
+include('templateProdNovo.php');
 
 
-
-include('templateProd.php');
+if (isset($_GET['btnCadastrarProd'])){
+	echo "opa pai";
+}
 
 ?>

@@ -5,16 +5,41 @@ if (!isset($_SESSION['idUsuario'])){
 }
 
 if (isset($_GET['menu'])){
+	switch ($_GET['menu']) {
+		case 'users':
+				if (!isset($_GET["userCadastrar"]) &&!isset($_GET["userEditar"])){
+					header ('Location: ../users/index.php');  
+				}
+				
+			break;
+		case 'categories':
+				if (!isset($_GET['catCadastrar']) && !isset($_GET['catEditar'])){
+					header ('Location: ../cat/index.php');  
+				}
+		case 'products':
+				if (!isset($_GET['prodCadastrar']) && !isset($_GET['prodEditar'])){
+					header ('Location: ../products/index.php');  
+				}
+		default:
+			# code...
+			break;
+	}
+}
+/*
+if (isset($_GET['menu'])){
 	if($_GET['menu'] == 'users'){
-	  	header ('Location: ../users/');  
+		if ($_GET['userCadastrar']){
+
+		}
+	  	header ('Location: ../users/index.php');  
 	}
 
 	if ($_GET['menu'] == 'categories'){
-		header ('Location: ../cat/');  
+		header ('Location: ../cat/.php');  
 	}
 
 	if ($_GET['menu'] == 'products'){
-		header ('Location: ../products/');  
+		header ('Location: ../products/index.php');  
 	}
-}
+*/
 ?>

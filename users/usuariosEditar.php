@@ -51,7 +51,7 @@
 							Ativo: <input type="checkbox" name="usuarioAtivo" <?php if($dadosUsuario['usuarioAtivo'] == 1) echo "checked"; ?>><br><br>
 									<input type="hidden" name="idUsuario" 
 										value="<?php echo $dadosUsuario['idUsuario']; ?>">		
-									<input type="submit" value="Atualizar" name="btnAtualizar">
+									<input type="submit" value="Atualizar" name="btnAtualizar"/> 
 								
 								</form>
 		</div>
