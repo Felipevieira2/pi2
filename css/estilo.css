@@ -73,53 +73,9 @@
 				
 				
 			}
-            form{
-            	text-align: center;
-            }
-            button{
-			    border-color:#BD0100;
-				width:150px;
-				height: 40px;
-            	background: #525252;
-            	font-family: 'Roboto', sans-serif;
-                color: white;
-				position: relative;
-            }
-			#divBusca{
-				  background-color:#E0EEEE;
-				  border:solid 2px #5F9EA0;
-				  border-radius:10px;
-				  width:70%;
-				  height:32px;
-			
-				  margin: 3px auto auto auto;
-				
-				  
-				 
-			}
-
-			#txtBusca{
-				  float:left;
-				  background-color:transparent;
-				  padding-left:5%; 
-				  font-size:18px;
-				  border:none;
-				  height:32px;
-				  width:70%;
-				 
-			}
-
-			#btnBusca{
-				  border:none;
-				  float:right;
-				  height:32px;
-				  border-radius:0 7px 7px 0;
-				  width:10%;
-				  font-weight:bold;
-				  background:#5F9EA0;
-				  
-			}
-
+          
+		
+		
 			#divBusca img{
 				  float:left;
 				  width: 3%;
@@ -143,38 +99,75 @@
             	font-size: 18px;
             	margin-top: 0px;
             }
-            aside {
-                float:right;
-            }
-			nav a {
-				font-family: 'Roboto', sans-serif;
-				font-weight: 300;
-				font-size: 20px;
-				color: #ffffff;
-				text-decoration: blink;
-				padding: 10px 10px 10px 10px;
-                margin-top: 20px;
-				background-color: #BD0100;
-                display: block;
-                
-				-webkit-border-top-left-radius:12px;
-				-moz-border-radius-topleft:12px;
-				border-top-left-radius:12px;
-				-webkit-border-top-right-radius:12px;
-				-moz-border-radius-topright:12px;
-				border-top-right-radius:12px;
-				-webkit-border-bottom-right-radius:12px;
-				-moz-border-radius-bottomright:12px;
-				border-bottom-right-radius:12px;
-				-webkit-border-bottom-left-radius:12px;
-				-moz-border-radius-bottomleft:12px;
-				border-bottom-left-radius:12px;
-			}
+           
+			
 			#tableDados{
 				width: 1000px;
 				border-color:#455A64;
-				text-align: center;
+				text-align: left;
+				margin:100px;
+
 			}
-			#teste {
-				width:1000px;
+			.formInput {
+			    padding: 8px;			   
+			    border: none;
+			    display:block;
+			    border-bottom: 1px solid #ccc;
+			    width: 80%;
 			}
+			.inputBorder {
+    			border: 1px solid #ccc!important;
+			}
+			
+			.campoTamanhoSmall{
+				width:15%;
+
+			}
+			.noBlock{
+				display: inline;
+			}
+			
+		
+.botao {
+	padding: 4px 11px;
+
+	border: 1px solid #ffcc00;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+
+	background-color: #ffcc00 !important;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffcc00), color-stop(100%,#ff6600)) !important;
+	background: -webkit-linear-gradient(top, #ffcc00, #ff6600) !important;
+	background: -moz-linear-gradient(top, #ffcc00, #ff6600) !important;
+	background: -ms-linear-gradient(top, #ffcc00, #ff6600) !important;
+	background: -o-linear-gradient(top, #ffcc00, #ff6600) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcc00', endColorstr='#ff6600',GradientType=0 );
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmY2MwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZjY2MDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	font-family:"Segoe UI";
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 0 1px 0 #666;
+	box-shadow: inset 0 1px 1px #fff, 0 2px 3px #666;
+	cursor:pointer;
+	position: relative;
+}
+
+.botao:hover {
+box-shadow: inset 0 2px 5px #fff, 0 2px 3px #666;
+background: -webkit-gradient(linear, left top, left bottom, from(#ffcc00), to(#ff6600)) !important;
+}
+
+.botao:active {
+box-shadow: inset 0 2px 5px #fff, 0 1px 3px #666 !important;
+top:2px
+}
+.botao a, .botao a:active, .botao a:hover, .botao a:visited { 
+	text-decoration:none; 
+	color: #fff; 
+	text-shadow: 0 1px 0 #666; 
+}
+#block{
+	display: block;
+}
+			

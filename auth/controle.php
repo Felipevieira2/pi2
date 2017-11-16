@@ -7,7 +7,7 @@ if (!isset($_SESSION['idUsuario'])){
 if (isset($_GET['menu'])){
 	switch ($_GET['menu']) {
 		case 'users':
-				if (!isset($_GET["userCadastrar"]) &&!isset($_GET["userEditar"])){
+				if (!isset($_GET["userCadastrar"]) && !isset($_GET["userEditar"])){
 					header ('Location: ../users/index.php');  
 				}
 				
@@ -16,10 +16,12 @@ if (isset($_GET['menu'])){
 				if (!isset($_GET['catCadastrar']) && !isset($_GET['catEditar'])){
 					header ('Location: ../cat/index.php');  
 				}
+			break;
 		case 'products':
 				if (!isset($_GET['prodCadastrar']) && !isset($_GET['prodEditar'])){
 					header ('Location: ../products/index.php');  
 				}
+			break;
 		default:
 			# code...
 			break;

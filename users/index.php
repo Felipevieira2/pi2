@@ -113,7 +113,7 @@ if(isset($_POST['btnAtualizar'])){
 
 }
 if (!isset($_GET['userCadastrar']) && !isset($_GET['userEditar'])){
-    include('/templateUsuarios.php');
+    include('/templateUsuario.php');
   }
 //form EDITAR
 if(isset($_GET['userEditar'])){
@@ -125,7 +125,7 @@ if(isset($_GET['userEditar'])){
 //Funcionalidade Gravar Cadastro
 if(isset($_GET['userCadastrar'])){//FORM userCadastrar Usuarios
 
-      include ('../users/usuariosCadastrar.php');
+      include ('../users/usuarioCad.php');
       
   }
 

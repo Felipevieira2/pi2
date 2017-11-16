@@ -28,42 +28,7 @@
   
             <div id="content">
                 <div id="tableDados">
-                <a href="?menu=categoria&catCadastrar=1"> Adicionar categoria</a>
-    <br>        
-                  <?php //exibe Usuarios 
-                    if(isset($erro)){
-                      echo $erro;
-                    }
-
-                      if (isset($msg)){
-                        echo $msg;
-                      } 
-                      ?>
-    		        <TABLE width="800" border='1'>
-                        <TR>
-                            <TD align=center>ID</TD>
-                            <td>Nome</td>
-                            <td>Descrição</td>
-                            
-                        </TR>
-
-
-                        <?php
-                        
-                        foreach ($categorias as $idCategoria => $dadosCategorias) {
-                            //exibe Usuarios em uma tabela 
-                               echo " <tr>
-                                  <td align=center>$idCategoria</td>
-                                  <td>{$dadosCategorias['nomeCategoria']}</td>
-                                  <td>{$dadosCategorias['descCategoria']}</td>
-                                  <td align=center> <a href='?menu=categorias&catEditar=$idCategoria'>Editar</a></td>
-                                  <td align=center><a href='?menu=categorias&catExcluir=$idCategoria'>Excluir</a></td>
-                                    </tr>";
-
-
-                            }
-                                  
-                   ?>
+                
                     </TABLE>
                 </div>
             </div>    

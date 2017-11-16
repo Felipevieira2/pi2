@@ -113,7 +113,7 @@ while($r = odbc_fetch_array($q)){
 }
 //Fim Funcionalidade Listar categorias
 
-include('templateCat.php');
+include('novocat.php');
 }
 
 ?>
