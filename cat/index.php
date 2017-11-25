@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 include('../db/conexao.php');
 include('../auth/controle.php');
 //Inicio funcionalidade incluir o formulário de cadastro
@@ -29,7 +29,7 @@ if(isset($_GET['catCadastrar'])){
 //Fim funcionalidade cadastrar nova categoria
 
 	if (isset($_GET['catCadastrar'])){ //verifica se o catCadastro já foi resetado 
-		include('templateCadCat.php');
+		include('templateCatCad.php');
 	}
 
 }
