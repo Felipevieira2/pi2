@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" href="../images/Gandalflogo.jpg" type="image/x-icon"/>
+        <link rel="shortcut icon" href="../images/Gandalflogo.jpg" type="image/x-icon"/>
         <title>Gandalf Store</title>
         <link rel="stylesheet" type="text/css" href="..\css\estilo.css"></head>
         <meta charset="utf-8" />
@@ -48,7 +50,7 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li class="dropdown ">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <a href="../logout.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         Logout
                         </a>
                         <ul class="dropdown-menu" role="menu">
@@ -115,16 +117,18 @@
              <?php if(isset($msg)){echo $msg;}
                    if(isset($erro)){echo $erro;} 
              ?>
-            <form method="post" action="exemplo.html" id="frm-filtro">
-                <p>
+
+            <form method="post" action="index.php" id="frm-filtro">
+
+                <p> 
                     <label for="pesquisar">Pesquisar</label>
-                    <input type="text" id="pesquisar" name="pesquisar" size="30" />
+                    <input type="text" id="pesquisar" placeholder="Pesquisar por nome do produto e pressione enter" name="pesquisaNome" size="40">
                     <span class="botao">
-                        <a href="?prodCadastrar=1"> Cadastrar </a>
+                        <a href="?prodCadastrar=1">Cadastrar</a>
                     </span>
                 </p>
             </form>
-        
+            
             <table cellspacing="0" summary="Tabela de dados do produto">
               <thead>
                 <tr>
@@ -138,11 +142,12 @@
                 </tr>
               </thead>
               <tbody>
-                 <?php 
-                        foreach ($produto as $idProduto => $dadosProduto) {
+                 <?php
+
+                  if(!isset($espErro)){ // valida se há erro para assim  exibir dados.
+                    foreach ($produto as $idProduto => $dadosProduto) {
                             $img = base64_encode($dadosProduto['imagem']);
                             $dadosProduto["nomeProduto"]= utf8_encode($dadosProduto["nomeProduto"]);
-                        
                             echo  "<tr>
                                   <td>${dadosProduto["idProduto"]}</td>
                                   <td>{$dadosProduto["nomeProduto"]}</td>
@@ -167,6 +172,8 @@
                                             </a>
                                       </td>";                    
                         }
+                   }
+                        
                     ?>
                  
                    </tr>  

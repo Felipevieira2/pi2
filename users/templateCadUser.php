@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" href="../images/Gandalflogo.jpg" type="image/x-icon"/>
+        <link rel="shortcut icon" href="../images/Gandalflogo.jpg" type="image/x-icon"/>
         <title>Gandalf Store</title>
         <link rel="stylesheet" type="text/css" href="..\css\estilo.css"></head>
         <link rel="stylesheet" href="..\js\custom.css" media="screen">
@@ -42,7 +44,7 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li class="dropdown ">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <a href="../logout.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         Logout
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -125,8 +127,14 @@
                                     <br><br>
                             Ativo: <input type="checkbox" name="usuarioAtivo">
                                     <br><br>
-                            <a href="?menu=users">Voltar</a>
-                            <input type="submit" value="Gravar" name="btnGravar">
+                           
+                                <span class="botao voltar">
+                                    <a href="?menu=users">Voltar</a>
+                                </span>
+                                <input class="botao" type="submit" value="Gravar" name="btnGravar">
+                                
+                            
+
                         </center>
                        
                 

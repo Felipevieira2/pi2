@@ -76,13 +76,13 @@
 			
 		
 .botao {
+	width: 100px;
+    height: 35px;
 	padding: 4px 11px;
-
 	border: 1px solid #74DBE9;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
 	border-radius: 8px;
-
 	background-color: #74DBE9 !important;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#74DBE9), color-stop(100%,#ff6600)) !important;
 	background: -webkit-linear-gradient(top, #74DBE9, #74DBE9) !important;
@@ -107,7 +107,6 @@ background: -webkit-gradient(linear, left top, left bottom, from(#74DBE9), to(#7
 
 .botao:active {
 box-shadow: inset 0 2px 5px #fff, 0 1px 3px #666 !important;
-top:2px
 }
 .botao a, .botao a:active, .botao a:hover, .botao a:visited { 
 	text-decoration:none; 
@@ -129,7 +128,16 @@ input[type=submit] {
     right: -20px;
 }
 
-
+.voltar{
+	left: -25%;
+	display: inline;
+}
+.cadastrar{
+	position: relative;
+}
 .vertical-offset-100{
     padding-top:50px;
+}
+.botaoLarge{
+	width: 140px;
 }

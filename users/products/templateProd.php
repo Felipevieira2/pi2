@@ -9,8 +9,9 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
         <script src="..\js\jquery.tablesorter.min.js"></script>
         <script src="..\js\jquery.tablesorter.pager.js"></script>
-        <link rel="stylesheet" href="..\js\custom.css" media="screen"/>
-        <meta name="robots" content="noindex, nofollow"/>
+        <link rel="stylesheet" href="..\js\custom.css" media="screen"Store
+        <meta name="robots" content="noindex, nofollow"> 
+        <title>Gandalf Store</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
         <link media="all" type="text/css" rel="stylesheet" href="https://bootsnipp.com/css/fullscreen.css">
@@ -49,9 +50,9 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li class="dropdown ">
-                    <a href="../logout.php" class="dropdown-toggle"  role="button">
+                    <a href="../logout.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         Logout
-                        <span class="caret"></span></a>
+                        </a>
                         <ul class="dropdown-menu" role="menu">
                             <li class="dropdown-header">SETTINGS</li>
                             <li class=""><a href="#">Other Link</a></li>
@@ -97,7 +98,7 @@
                         <span class="glyphicon glyphicon-cloud"></span> Produtos
                         </a>
                     </li>
-                    
+                     
                 </ul>
                  <center>
                      <img id="logo" width="220px" src="../images/GandalfLOGO.jpg" />
@@ -110,79 +111,76 @@
         <div class="col-md-10 content">
               <div class="panel panel-default">
     <div class="panel-heading">
-
-        Cadastro de Usuários
-       
+        Cadastro de produtos
     </div>
     <div class="panel-body">
-         <?php //exibe Usuarios 
-            if(isset($erro)){
-                echo $erro;
-            }
+             <?php if(isset($msg)){echo $msg;}
+                   if(isset($erro)){echo $erro;} 
+             ?>
 
-            if (isset($msg)){
-                echo $msg;
-            } 
-         ?>
-            <form method="post" action="exemplo.html" id="frm-filtro">
-                <p>
+            <form method="post" action="index.php" id="frm-filtro">
+
+                <p> 
                     <label for="pesquisar">Pesquisar</label>
-                    <input type="text" id="pesquisar" name="pesquisar" size="30" />
+                    <input type="text" id="pesquisar" placeholder="Pesquisar por nome do produto e pressione enter" name="pesquisaNome" size="40">
                     <span class="botao">
-                        <a href="?menu=users&userCadastrar=1"> Cadastrar </a>
+                        <a href="?prodCadastrar=1">Cadastrar</a>
                     </span>
                 </p>
             </form>
-        
+            
             <table cellspacing="0" summary="Tabela de dados do produto">
               <thead>
-              <tr>
-                  
+                <tr>
                   <th>ID</th>
-                  <th>Login</th>
-                  <th>Nome</th>
-                  <th>Permissão</th>
+                  <th>Produto</th>
+                  <th>Imagem</th>
+                  <th>Preço</th>
                   <th>Ativo</th>
-                  <th>Editar</th>
-                  <th>Excluir</th>
+                  <th>Qtd Min</th>
+                  <th>Ações</th>
                 </tr>
               </thead>
               <tbody>
-                    
                  <?php
+
+                  if(!isset($espErro)){ // valida se há erro para assim  exibir dados.
+                    foreach ($produto as $idProduto => $dadosProduto) {
+                            $img = base64_encode($dadosProduto['imagem']);
+                            $dadosProduto["nomeProduto"]= utf8_encode($dadosProduto["nomeProduto"]);
+                            echo  "<tr>
+                                  <td>${dadosProduto["idProduto"]}</td>
+                                  <td>{$dadosProduto["nomeProduto"]}</td>
+                                  "                         
+                                  . '<td>
+                                  <img src="data:image/jpeg;base64,'.$img.'" style="width: 150px;"/>
+                                  </td>'.
+                                 " <td>${dadosProduto["precProduto"]}</td>";
+                                  if ($dadosProduto["ativoProduto"] == 1){
+                                    echo "<td>Ativo</td> </td>"; 
+                                  }else
+                                  {
+                                    echo "<td>Inativo</td></td>";
+                                  }
+                                 echo "<td>${dadosProduto["qtdMinEstoque"]}</td>
+                                       <td> 
+                                            <a href='?btnEditarProd=$idProduto'>
+                                                <img src='../js/edit.png' width='16' height='16' /> 
+                                            </a>
+                                            <a href='?menu=products&btnExcluirProd=$idProduto'>
+                                                <img src='..\js\delete.png' width='16' height='16'/>
+                                            </a>
+                                      </td>";                    
+                        }
+                   }
                         
-                        foreach ($usuarios as $idUsuario => $dadosUsuario) {
-                            //exibe Usuarios em uma tabela 
-                               echo "<tr>
-                                 
-                                  <td align=center>$idUsuario</td>
-                                  <td>{$dadosUsuario['loginUsuario']}</td>
-                                  <td>{$dadosUsuario['nomeUsuario']}</td>";
+                    ?>
+                 
+                   </tr>  
 
-                                  if ($dadosUsuario['perfilUsuario'] == 'A'){
-                                    echo "<td align=center> Administrador</td>";
-                                }else{
-                                    echo "<td align=center> Padrão</td>";
-                                }
-
-
-                                  if($dadosUsuario['usuarioAtivo']=='1'){
-                                     echo "<td align=center> Ativo</td>";
-                                 }else{
-                                    echo "<td align=center> Inativo</td>";
-                                 }
-                                 
-                                  echo "<td align=center background=><a href='?menu=users&userEditar=$idUsuario'><img src='../js/edit.png' width='16' height='16' /></a></td>
-                                  <td align=center><a href='?menu=users&excluir=$idUsuario'><img src='../js/delete.png' width='16' height='16' /></a></td>";
-                            }
-                
-                     
-                        ?>
-                        </tr>
                 <tr>
 
-                </tr> 
-                   
+                </tr>    
               </tbody>
             </table>
             
@@ -216,12 +214,18 @@
             <hr class="divider">
 
             <p> 
-            <center>
-                 Copyright © 2017 - Felipe Erivaldo Vieira Barros - Sistemas para Internet.
-            </center>
+                <center>
+                        Copyright © 2017 - Felipe Erivaldo Vieira Barros - Sistemas para Internet.
+                </center>
             </p>
-            </footer>
+        </footer>
     </div>
+
+
+
+            
+           
+
 
     </body>
 </html>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" href="../images/Gandalflogo.jpg" type="image/x-icon"/>
+        <link rel="shortcut icon" href="../images/Gandalflogo.jpg" type="image/x-icon"/>
         <title>Gandalf Store</title>
         <link rel="stylesheet" type="text/css" href="..\css\estilo.css"></head>
         <meta charset="utf-8" />
@@ -43,7 +45,7 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li class="dropdown ">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                     <a href="../logout.php" class="dropdown-toggle"  role="button">
                         Logout
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -104,7 +106,7 @@
         <div class="col-md-10 content">
               <div class="panel panel-default">
     <div class="panel-heading">
-        Cadastro de produtos
+        Cadastro de Usuários
     </div>
     <div class="panel-body">
         
@@ -127,8 +129,10 @@
                             Ativo: <input type="checkbox" name="usuarioAtivo" <?php if($dadosUsuario['usuarioAtivo'] == 1) echo "checked"; ?>><br><br>
                                     <input type="hidden" name="idUsuario" 
                                         value="<?php echo $dadosUsuario['idUsuario']; ?>"> 
-                                    <a href="?menu=users">Voltar</a>     
-                                    <input type="submit" value="Atualizar" name="btnAtualizar"/> 
+                                    <span class="botao voltar">
+                                    <a href="?menu=users">Voltar</a>
+                                    </span>     
+                                    <input class="botao" type="submit" value="Alterar" name="btnAtualizar"/> 
                         </center>
                        
                 

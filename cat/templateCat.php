@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" href="../images/Gandalflogo.jpg" type="image/x-icon"/>
+        <link rel="shortcut icon" href="../images/Gandalflogo.jpg" type="image/x-icon"/>
         <title>Gandalf Store</title>
         <link rel="stylesheet" type="text/css" href="..\css\estilo.css"></head>
         <meta charset="utf-8" />
@@ -47,7 +49,7 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li class="dropdown ">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <a href="../logout.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         Logout
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">

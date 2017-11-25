@@ -2,10 +2,32 @@
 ini_set ('odbc.defaultlrl', 9000000);//muda configuração do PHP para trabalhar com imagens no DB
 include('../db/conexao.php');
 include('../auth/controle.php');
+if(isset($_POST['pesquisaNome'])){
+	    $pesquisaNomeProd = $_POST['pesquisaNome'];		
+		$queryNomeProduto = "SELECT * FROM PRODUTO WHERE nomeProduto LIKE '%" .$pesquisaNomeProd. "%'";
+		$stmt = odbc_exec($db, $queryNomeProduto);
+		while ($totalProdutos = odbc_fetch_array($stmt)) {
+		$produto[$totalProdutos['idProduto']] = $totalProdutos;
+		}
+		if(!isset($produto)){
+
+			$erro = "Não foram encontrados itens!!!";
+			$espErro = 1; // atenção não alterar faz parte da validação do sistema. // erro 1 não encontrados resultados
+			include('templateProd.php');
+		}else{
+			$msg = "Sua pesquisa retornou os seguintes itens";
+			include('templateProd.php');
+
+		}
+ 		 		
+	
+}
+
 if(isset($_GET['btnExcluirProd'])){
 		$queryDelProd = 'DELETE produto WHERE idProduto = '.$_GET['btnExcluirProd']; 
    		if(isset($_GET['btnExcluirProd'])){
       		if(is_numeric($_GET['btnExcluirProd'])){
+      			//select * from produto
     			if(odbc_exec($db, $queryDelProd)){
 		        $msg = 'Produto removido com sucesso';            
 		      	}else{
@@ -18,9 +40,11 @@ if(isset($_GET['btnExcluirProd'])){
     	}
 	}
 
-$consultaProdutos = odbc_exec($db, 'SELECT * FROM PRODUTO ');
+if(!isset($_POST['pesquisaNome'])){
+	$consultaProdutos = odbc_exec($db, 'SELECT * FROM PRODUTO ');
 while ($totalProdutos = odbc_fetch_array($consultaProdutos)) {
 	$produto[$totalProdutos['idProduto']] = $totalProdutos;
+}
 }
 
 //funcionalidade gravar o produto no banco
@@ -36,7 +60,13 @@ if (isset($_POST['btnGravarCadProd'])){
 		$tamanho = $imagem['size'];
 		// Validações básicas
 		// Formato
-		$conteudo = file_get_contents($imagem['tmp_name']);
+		if(!$imagem['error'] == 4){
+			$conteudo = file_get_contents($imagem['tmp_name']);
+		}else{
+			$conteudo = null;
+		}
+		
+
 		$precoProduto = floatval($_POST['precProduto']);
 		$descontoPromocao = floatval($_POST['descontoPromocao']);
 		$idUsuario = intval($_SESSION['idUsuario']);
@@ -165,7 +195,10 @@ while ($totalProdutos = odbc_fetch_array($consultaProdutos)) {
 }
 
 if ((!isset($_GET['btnEditarProd'])) && (!isset($_GET['prodCadastrar']))){ //se não for acionado cadastro exibirá uma table com os produtos
+	if(!isset($_POST['pesquisaNome']) && (!isset($_GET['btnPesquisaNome']))){
 	include('templateProd.php');
+}
+	
 
 }
 //fim funcionalidade alterar produto
