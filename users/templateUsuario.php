@@ -173,7 +173,7 @@
                                  }
                                  
                                   echo "<td align=center background=><a href='?menu=users&userEditar=$idUsuario'><img src='../js/edit.png' width='16' height='16' /></a></td>
-                                  <td align=center><a href='?menu=users&excluir=$idUsuario'><img src='../js/delete.png' width='16' height='16' /></a></td>";
+                                  <td align=center><a href='?excluir=$idUsuario'><img src='../js/delete.png' width='16' height='16' /></a></td>";
                             }
                 
                      
