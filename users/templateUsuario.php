@@ -7,9 +7,8 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
         <script src="..\js\jquery.tablesorter.min.js"></script>
         <script src="..\js\jquery.tablesorter.pager.js"></script>
-        <link rel="stylesheet" href="..\js\custom.css" media="screen"Store
-        <meta name="robots" content="noindex, nofollow"> 
-        <title>Gandalf Store</title>
+        <link rel="stylesheet" href="..\js\custom.css" media="screen"/>
+        <meta name="robots" content="noindex, nofollow"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
         <link media="all" type="text/css" rel="stylesheet" href="https://bootsnipp.com/css/fullscreen.css">
@@ -48,8 +47,8 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li class="dropdown ">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        Account
+                    <a href="../logout.php" class="dropdown-toggle"  role="button">
+                        Logout
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li class="dropdown-header">SETTINGS</li>
@@ -96,43 +95,11 @@
                         <span class="glyphicon glyphicon-cloud"></span> Produtos
                         </a>
                     </li>
-                    <!-- Dropdown-->
-                    <li class="panel panel-default" id="dropdown">
-                        <a data-toggle="collapse" href="#dropdown-lvl1">
-                            <span class="glyphicon glyphicon-user"></span> Sub Level <span class="caret"></span>
-                        </a>
-
-                        <!-- Dropdown level 1 -->
-                        <div id="dropdown-lvl1" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="#">Link</a></li>
-                                    <li><a href="#">Link</a></li>
-                                    <li><a href="#">Link</a></li>
-
-                                    <!-- Dropdown level 2 -->
-                                    <li class="panel panel-default" id="dropdown">
-                                        <a data-toggle="collapse" href="#dropdown-lvl2">
-                                            <span class="glyphicon glyphicon-off"></span> Sub Level <span class="caret"></span>
-                                        </a>
-                                        <div id="dropdown-lvl2" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <ul class="nav navbar-nav">
-                                                    <li><a href="#">Link</a></li>
-                                                    <li><a href="#">Link</a></li>
-                                                    <li><a href="#">Link</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li><a href="#"><span class="glyphicon glyphicon-signal"></span> Link</a></li>
-
+                    
                 </ul>
+                 <center>
+                     <img id="logo" width="220px" src="../images/GandalfLOGO.jpg" />
+                 </center>
             </div><!-- /.navbar-collapse -->
         </nav>
 
@@ -142,25 +109,25 @@
               <div class="panel panel-default">
     <div class="panel-heading">
 
-        Cadastro de produtos
-        <?php //exibe Usuarios 
-        if(isset($erro)){
-            echo $erro;
-        }
-
-        if (isset($msg)){
-            echo $msg;
-        } 
-        ?>
+        Cadastro de Usuários
+       
     </div>
     <div class="panel-body">
-        
+         <?php //exibe Usuarios 
+            if(isset($erro)){
+                echo $erro;
+            }
+
+            if (isset($msg)){
+                echo $msg;
+            } 
+         ?>
             <form method="post" action="exemplo.html" id="frm-filtro">
                 <p>
                     <label for="pesquisar">Pesquisar</label>
                     <input type="text" id="pesquisar" name="pesquisar" size="30" />
                     <span class="botao">
-                        <a href="?menu=products&prodCadastrar=1"> Cadastrar </a>
+                        <a href="?menu=users&userCadastrar=1"> Cadastrar </a>
                     </span>
                 </p>
             </form>
@@ -168,7 +135,7 @@
             <table cellspacing="0" summary="Tabela de dados do produto">
               <thead>
               <tr>
-                  <th><input type="checkbox" value="1" id="marcar-todos" name="marcar-todos" /></th>
+                  
                   <th>ID</th>
                   <th>Login</th>
                   <th>Nome</th>
@@ -185,7 +152,7 @@
                         foreach ($usuarios as $idUsuario => $dadosUsuario) {
                             //exibe Usuarios em uma tabela 
                                echo "<tr>
-                                  <td> <input type='checkbox' value='${dadosUsuario["idUsuario"]}' name='marcar[]' /></td>
+                                 
                                   <td align=center>$idUsuario</td>
                                   <td>{$dadosUsuario['loginUsuario']}</td>
                                   <td>{$dadosUsuario['nomeUsuario']}</td>";
@@ -204,7 +171,7 @@
                                  }
                                  
                                   echo "<td align=center background=><a href='?menu=users&userEditar=$idUsuario'><img src='../js/edit.png' width='16' height='16' /></a></td>
-                                  <td align=center><a href='?menu=users&excluir=$idUsuario'><img src='../js/edit.png' width='16' height='16' /></a></td>";
+                                  <td align=center><a href='?menu=users&excluir=$idUsuario'><img src='../js/delete.png' width='16' height='16' /></a></td>";
                             }
                 
                      
@@ -242,17 +209,17 @@
         </div>
         <footer class="pull-left footer">
             <p class="col-md-12">
-                </p><hr class="divider">
-                Copyright © 2015 
-            <p></p>
-        </footer>
+
+            </p> 
+            <hr class="divider">
+
+            <p> 
+            <center>
+                 Copyright © 2017 - Felipe Erivaldo Vieira Barros - Sistemas para Internet.
+            </center>
+            </p>
+            </footer>
     </div>
-
-
-
-            
-           
-
 
     </body>
 </html>

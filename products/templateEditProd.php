@@ -4,17 +4,16 @@
         <title>Gandalf Store</title>
         <link rel="stylesheet" type="text/css" href="..\css\estilo.css"></head>
         <meta charset="utf-8" />
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-        <script src="..\js\jquery.tablesorter.min.js"></script>
-        <script src="..\js\jquery.tablesorter.pager.js"></script>
-        <link rel="stylesheet" href="..\js\custom.css" media="screen"Store
+        
+        <link rel="stylesheet" href="..\js\custom.css" media="screen">
         <meta name="robots" content="noindex, nofollow"> 
         <title>Gandalf Store</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        
+        <script type="text/javascript" src="../js/bootstrap.js"></script>
+
         <link media="all" type="text/css" rel="stylesheet" href="https://bootsnipp.com/css/fullscreen.css">
         <link media="all" type="text/css" rel="stylesheet" href="../css/estilo1.css">
-        <script type="text/javascript" src="../js/bootstrap.js"></script>
         <link href="../css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     </head>
@@ -92,7 +91,10 @@
                         </a>
                     </li>
 
-                    <li><a href="..\products\index.php?menu=products"><span class="glyphicon glyphicon-cloud"></span> Produtos</a></li>
+                    <li><a href="..\products\index.php?menu=products">
+                        <span class="glyphicon glyphicon-cloud"></span> Produtos
+                        </a>
+                    </li>
                      
                 </ul>
                  <center>
@@ -106,39 +108,52 @@
         <div class="col-md-10 content">
               <div class="panel panel-default">
     <div class="panel-heading">
-        Cadastro de produtos - NOVO PRODUTO
+        Cadastro de produtos
     </div>
     <div class="panel-body">
+        
         <center>
-            <h1>Novo produto</h1>
+            <h1>Alteração de Produto</h1>
         </center>
-        <?php 
-        if (isset($msg)){echo $msg;}?>
         <div id="pager" class="pager">
-            <form method= "POST" action="index.php" enctype="multipart/form-data">
-                <p>
+            
+            <form method= "POST" enctype="multipart/form-data">
+                <center>
+                    <p>
                     <label>Produto:</label>  
-                        <input required class="formInput inputBorder" type="text" name="nomeProduto">
-                </p>
+                        <input class="formInput inputBorder" type="text" name="nomeProduto" 
+                        value='<?php echo utf8_encode($produto[$idProduto]['nomeProduto']);?>' >
+                
 
-                <p> 
+                    
                     <label>Descrição: </label> 
-                    <textarea class="formInput inputBorder" name="descProduto"></textarea>
-                </p>
+                    <textarea rows="10" cols="90" class="formInput inputBorder" name="descProduto"><?php echo utf8_encode($produto[$idProduto]['descProduto']);?></textarea>
+                       
+                    </p>
+                </center>
+                  
+                        
+                    
+                
 
                 <p> 
-                    <label>Preço: </label>
-                    <input required class="formInput inputBorder campoTamanhoSmall noBlock" type="number" max="10000.00" step="0.01" name="precProduto">
+                    <label>Preço: </label> 
+                    <input class="formInput inputBorder campoTamanhoSmall noBlock" type="number" max="10000.00" step="0.01" name="precProduto" value='<?php echo $produto[$idProduto]['precProduto'];?>'>
                     <label> Desconto: </label>
                                                    
-                    <input class="formInput inputBorder campoTamanhoSmall noBlock"  type="text" name="descontoPromocao">
+                    <input class="formInput inputBorder campoTamanhoSmall noBlock"  type="text" name="descontoPromocao" 
+                    value='<?php echo $produto[$idProduto]['descontoPromocao'];?>'>
                     <label> Categoria:</label> 
-                          <select required name="idCategoria" >
-                              <option value="">Escolha</option>
+                          <select name="idCategoria">
+                              <?php echo "<option value='{$idCategoriaProd}'>
+                                            {$nomeCategoriaProd}
+                                        </option>";
+                              ?>          
                               <?php 
                               foreach ($categorias as $idCategoria => $dadosCategoria) {
-                                echo "<option  value='{$dadosCategoria["idCategoria"]}'>
-                                    {$dadosCategoria["nomeCategoria"]} </option>";
+                                echo "<option value='{$dadosCategoria["idCategoria"]}'>
+                                    {$dadosCategoria["nomeCategoria"]} 
+                                    </option>";
                                
                               }
                               ?>
@@ -148,16 +163,40 @@
 
                 <p>
                     <label> Qtd Minima de estoque:</label>
-                          <input type="text" class="formInput inputBorder campoTamanhoSmall noBlock" name="qtdMinEstoque">
-                    <label>Selecione a imagem</label>
+                          <input type="text"  class="formInput campoTamanhoSmall inputBorder noBlock" name="qtdMinEstoque" value='<?php echo $produto[$idProduto]['qtdMinEstoque'];?>'>
+                    <label>Imagem atual: </label>
+                    <?php
+                    $img = base64_encode($produto[$idProduto]['imagem']);
+                    echo '<img src="data:image/jpeg;base64,'.$img.'" style="width: 150px;" />'; 
                     
+                    ?>
                 </p>
-                    <input type="file" value="imagem" name="imagem"/>
-                    <input type="submit" value="Gravar" name="btnGravarCadProd">
                     
-                
+                    
+                <?php 
+                if(isset($_GET['btnAltImg'])){
+                echo'<label>
+                        Selecione a imagem
+                    </label>
+                    <input type="file" name="imagemAlt"/>';
+                }
+                    ?>
+                 
+                <span class="botao">
+                <a href="?menu=products">Voltar</a>
+                </span>
+                <span class="botao"><?php 
+                echo "<a href='?btnEditarProd=$idProduto&btnAltImg=1'>Alterar imagem</a>"
+                ?>
+                </span>
+                <input class="botao" type="submit" value="Gravar" name="btnGravarAltProd">
       
-                  </form>
+                </form>
+                 
+                    
+                       
+                    
+
          
         </div>
     
@@ -166,15 +205,13 @@
         </div>
         <footer class="pull-left footer">
             <p class="col-md-12">
-
-            </p> 
+                </p>
             <hr class="divider">
-
             <p> 
                 <center>
-                        Copyright © 2017 - Felipe Erivaldo Vieira Barros - Sistema para Internet.
+                        Copyright © 2017 - Felipe Erivaldo Vieira Barros - Sistemas para Internet.
                 </center>
-            </p>
+                </p>
         </footer>
     </div>
 
@@ -182,7 +219,12 @@
 
             
            
-
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+        <script src="..\js\jquery.tablesorter.min.js"></script>
+        <script src="..\js\jquery.tablesorter.pager.js"></script>
+        <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+        <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 
     </body>
 </html>

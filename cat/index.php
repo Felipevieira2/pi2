@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 include('../db/conexao.php');
 include('../auth/controle.php');
 //Inicio funcionalidade incluir o formulário de cadastro
@@ -29,7 +29,7 @@ if(isset($_GET['catCadastrar'])){
 //Fim funcionalidade cadastrar nova categoria
 
 	if (isset($_GET['catCadastrar'])){ //verifica se o catCadastro já foi resetado 
-		include('categoriaCadastrar.php');
+		include('templateCadCat.php');
 	}
 
 }
@@ -67,7 +67,7 @@ if (isset($_GET['catEditar'])){
 }
 
 	if(!isset($_POST['btnEditar'])){
-	    include ('categoriaEditar.php');
+	    include ('templateEditCat.php');
 
 	}
 
@@ -81,7 +81,6 @@ if (isset($_GET['catExcluir'])){
 
 		$resultadoCategoria = (odbc_exec($db, $consultaCategoria));
 		$numeroLinhas = odbc_num_rows($resultadoCategoria);
-		echo $numeroLinhas;
 		if ($numeroLinhas == 0){
 			if(odbc_exec($db, "DELETE categoria 
 			WHERE idCategoria = 
@@ -92,7 +91,7 @@ if (isset($_GET['catExcluir'])){
 				$erro ="Erro ao excluir categoria";
 			}
 		}else{
-			$erro = "Existem produtos cadastrados na categoria!";
+			$erro = "Erro!!! Atenção!!! Existem produtos cadastrados na categoria!";
 		}
 		
 	}else{
@@ -113,7 +112,7 @@ while($r = odbc_fetch_array($q)){
 }
 //Fim Funcionalidade Listar categorias
 
-include('novocat.php');
+include('templateCat.php');
 }
 
 ?>

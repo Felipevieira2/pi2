@@ -2,17 +2,16 @@
 include('../db/conexao.php');
 include('../auth/controle.php');
 
-//Funcionalidade Listar
-if (isset($_GET['excluir'])){
-    //Funcionalidade Excluir
-    if(isset($_GET['excluir'])){
+ //Funcionalidade Excluir
+if(isset($_GET['excluir'])){
       if(is_numeric($_GET['excluir'])){
     
       if(odbc_exec($db, " DELETE FROM 
                   Usuario 
               WHERE
                 idUsuario = {$_GET['excluir']}")){
-        $msg = 'Usuário removido com sucesso';            
+
+        $msg = "Usuário removido com sucesso";            
       }else{
       $erro = 'Erro ao excluir o usuário';
       }
@@ -21,17 +20,8 @@ if (isset($_GET['excluir'])){
         $erro = 'Código inválido';
       }
     }
+//FIM Funcionalidade Excluir
 
-}//FIM Funcionalidade Excluir
-$q = odbc_exec($db, 'SELECT idUsuario, loginUsuario,
-                  nomeUsuario, perfilUsuario,
-                  usuarioAtivo
-                  FROM
-                  Usuario');
-while($r = odbc_fetch_array($q)){
-  $usuarios[$r['idUsuario']] = $r;
-}
-//fim listar
 
 
 if(isset($_POST['btnGravar'])){
@@ -67,6 +57,8 @@ if(isset($_POST['btnGravar'])){
   }
 }
 //FIM Funcionalidade Gravar Cadastro de Usuarios 
+
+
 
 
 //Funcionalidade userEditar Cadastro de Usuários
@@ -112,20 +104,30 @@ if(isset($_POST['btnAtualizar'])){
   }
 
 }
+//funcionalidade listar
+$q = odbc_exec($db, 'SELECT idUsuario, loginUsuario,
+                  nomeUsuario, perfilUsuario,
+                  usuarioAtivo
+                  FROM
+                  Usuario');
+while($r = odbc_fetch_array($q)){
+  $usuarios[$r['idUsuario']] = $r;
+}
+//fim listar
 if (!isset($_GET['userCadastrar']) && !isset($_GET['userEditar'])){
     include('/templateUsuario.php');
   }
 //form EDITAR
 if(isset($_GET['userEditar'])){
   $dadosUsuario = $usuarios[$_GET['userEditar']]; 
-  include('../users/usuariosEditar.php');
+  include('../users/templateEditUser.php');
       
 }
   
 //Funcionalidade Gravar Cadastro
 if(isset($_GET['userCadastrar'])){//FORM userCadastrar Usuarios
 
-      include ('../users/usuarioCad.php');
+      include ('../users/templateCadUser.php');
       
   }
 

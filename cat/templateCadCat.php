@@ -7,9 +7,8 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
         <script src="..\js\jquery.tablesorter.min.js"></script>
         <script src="..\js\jquery.tablesorter.pager.js"></script>
-        <link rel="stylesheet" href="..\js\custom.css" media="screen"Store
+        <link rel="stylesheet" href="..\js\custom.css" media="screen">
         <meta name="robots" content="noindex, nofollow"> 
-        <title>Gandalf Store</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
         <link media="all" type="text/css" rel="stylesheet" href="https://bootsnipp.com/css/fullscreen.css">
@@ -49,7 +48,7 @@
                 
                 <li class="dropdown ">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        Logout
+                        Account
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li class="dropdown-header">SETTINGS</li>
@@ -106,58 +105,30 @@
         <div class="col-md-10 content">
               <div class="panel panel-default">
     <div class="panel-heading">
-        Cadastro de produtos - NOVO PRODUTO
+        Cadastro de Categorias - NOVO
     </div>
     <div class="panel-body">
         <center>
-            <h1>Novo produto</h1>
+            <h1>Nova Categoria</h1>
         </center>
-        <?php 
-        if (isset($msg)){echo $msg;}?>
         <div id="pager" class="pager">
-            <form method= "POST" action="index.php" enctype="multipart/form-data">
+            <form method= "POST" enctype="multipart/form-data">
                 <p>
-                    <label>Produto:</label>  
-                        <input required class="formInput inputBorder" type="text" name="nomeProduto">
+                    <label>Nome</label> 
+                    <input class="formInput inputBorder"  type="text" name="nomeCategoria"> 
                 </p>
 
                 <p> 
-                    <label>Descrição: </label> 
-                    <textarea class="formInput inputBorder" name="descProduto"></textarea>
+                    <label>Descrição</label> 
+                    <input class="formInput inputBorder"  type="text" name="descCategoria">
                 </p>
-
-                <p> 
-                    <label>Preço: </label>
-                    <input required class="formInput inputBorder campoTamanhoSmall noBlock" type="number" max="10000.00" step="0.01" name="precProduto">
-                    <label> Desconto: </label>
-                                                   
-                    <input class="formInput inputBorder campoTamanhoSmall noBlock"  type="text" name="descontoPromocao">
-                    <label> Categoria:</label> 
-                          <select required name="idCategoria" >
-                              <option value="">Escolha</option>
-                              <?php 
-                              foreach ($categorias as $idCategoria => $dadosCategoria) {
-                                echo "<option  value='{$dadosCategoria["idCategoria"]}'>
-                                    {$dadosCategoria["nomeCategoria"]} </option>";
-                               
-                              }
-                              ?>
-                          </select>
-                          
-                </p>
-
-                <p>
-                    <label> Qtd Minima de estoque:</label>
-                          <input type="text" class="formInput inputBorder campoTamanhoSmall noBlock" name="qtdMinEstoque">
-                    <label>Selecione a imagem</label>
-                    
-                </p>
-                    <input type="file" value="imagem" name="imagem"/>
-                    <input type="submit" value="Gravar" name="btnGravarCadProd">
-                    
+                <span class="botao">
+                    <a href="?menu=categories">Voltar</a>
+                </span>
                 
-      
-                  </form>
+                <input class="botao"  size="10" type="submit" value="Enviar" name="btnGravar">
+
+                </form>
          
         </div>
     
@@ -166,13 +137,12 @@
         </div>
         <footer class="pull-left footer">
             <p class="col-md-12">
-
-            </p> 
-            <hr class="divider">
-
-            <p> 
-                <center>
-                        Copyright © 2017 - Felipe Erivaldo Vieira Barros - Sistema para Internet.
+            </p>
+                <hr class="divider">
+                
+            <p>
+                 <center>
+                    Copyright © 2017 - Felipe Erivaldo Vieira Barros - Sistemas para Internet.
                 </center>
             </p>
         </footer>
