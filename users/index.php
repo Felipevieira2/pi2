@@ -115,7 +115,7 @@ while($r = odbc_fetch_array($q)){
 }
 //fim listar
 if (!isset($_GET['userCadastrar']) && !isset($_GET['userEditar'])){
-    include('/templateUsuario.php');
+    include('templateUsuario.php');
   }
 //form EDITAR
 if(isset($_GET['userEditar'])){
@@ -127,7 +127,7 @@ if(isset($_GET['userEditar'])){
 //Funcionalidade Gravar Cadastro
 if(isset($_GET['userCadastrar'])){//FORM userCadastrar Usuarios
 
-      include ('../users/templateCadUser.php');
+      include ('templateCadUser.php');
       
   }
 
