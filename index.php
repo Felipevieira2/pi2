@@ -27,7 +27,7 @@ if (isset($_POST['login']) && (isset($_POST['senha']))){
 }
 if (isset($_SESSION['idUsuario'])){
 	
-	header('Location: ../users/index.php');
+	header('Location: ../pi2/users/index.php');
 }
 
 include('template.php');
