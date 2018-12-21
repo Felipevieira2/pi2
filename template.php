@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="icon" href="/images/Gandalflogo.jpg" type="image/x-icon"/>
-        <link rel="shortcut icon" href="../images/Gandalflogo.jpg" type="image/x-icon"/>
+        <link rel="icon" href="images/Gandalflogo.jpg" type="image/x-icon"/>
+        <link rel="shortcut icon" href="images/Gandalflogo.jpg" type="image/x-icon"/>
         <title>Gandalf Store</title>
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css\estilo.css">
-        <link href="../css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     </head>
     
     <body bgcolor="#FFFFFF">
