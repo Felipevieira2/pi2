@@ -106,7 +106,7 @@ if(isset($_POST['btnAtualizar'])){
 }
 //funcionalidade listar
 $q = odbc_exec($db, 'SELECT idUsuario, loginUsuario,
-                  nomeUsuario, perfilUsuario,
+                  nomeUsuario, perfilUsuario,senhaUsuario,
                   usuarioAtivo
                   FROM
                   Usuario');
