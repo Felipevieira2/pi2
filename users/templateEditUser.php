@@ -118,7 +118,7 @@
             <form method= "POST" enctype="multipart/form-data">
                         <center>
                            Login: <input type="text" name="loginUsuario" value="<?php echo $dadosUsuario['loginUsuario']; ?>"><br><br>
-                            Senha: <input type="password" name="senhaUsuario"><br><br>
+                            Senha: <input type="password" name="senhaUsuario" value="<?php echo $dadosUsuario['senhaUsuario']; ?>"><br><br>
                             Nome:  <input type="text" name="nomeUsuario" value="<?php echo $dadosUsuario['nomeUsuario']; ?>"><br><br>
                             Perfil: <select name="perfilUsuario">
                                         <option value="">Escolha</option>
